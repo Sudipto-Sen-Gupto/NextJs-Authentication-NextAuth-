@@ -1,6 +1,7 @@
 import NextAuth from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials";
 
+
  const userList=[
        {userName:"Cokomali",password:"cokocoko"},
        {
@@ -36,7 +37,12 @@ export const authOptions = {
                   }
             const isPassOk=nameMatch.password==password;
              if(isPassOk){
-                    return nameMatch;
+                       
+                    return {
+                             
+                                name: nameMatch.userName,
+                               
+  };
              }      
         return null
 
