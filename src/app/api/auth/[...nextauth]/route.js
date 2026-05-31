@@ -3,9 +3,9 @@ import CredentialsProvider from "next-auth/providers/credentials";
 
 
  const userList=[
-       {userName:"Cokomali",password:"cokocoko"},
+       {name:"Cokomali",password:"cokocoko"},
        {
-        userName:"Malacak",password:'malamala'
+        name:"Malacak",password:'malamala'
        }
  ] 
 
@@ -30,7 +30,7 @@ export const authOptions = {
      
                   const {username,password,secret_code}= credentials;
 
-                  const nameMatch=userList.find(u=>u.userName==username);
+                  const nameMatch=userList.find(u=>u.name==username);
 
                   if(!nameMatch){
                     return null
@@ -38,11 +38,7 @@ export const authOptions = {
             const isPassOk=nameMatch.password==password;
              if(isPassOk){
                        
-                    return {
-                             
-                                name: nameMatch.userName,
-                               
-  };
+                    return  nameMatch
              }      
         return null
 
